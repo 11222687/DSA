@@ -1,0 +1,49 @@
+DFS Traversal :
+
+1. Inorder Traversal 
+Question Link : https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+Solution reference : 
+class Solution {
+    List<Integer> result = new ArrayList<>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        if(root==null)
+            return result;
+        inorderTraversal(root.left);
+        result.add(root.val);
+        inorderTraversal(root.right);
+        return result;
+    }
+}
+
+2. Preorder Traversal 
+Question Link : https://leetcode.com/problems/binary-tree-preorder-traversal/
+
+Solution reference :
+class Solution {
+    List<Integer> result = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root) {
+        if(root==null)
+            return result;
+        result.add(root.val);
+        preorderTraversal(root.left);
+        preorderTraversal(root.right);
+        return result;
+    }
+}
+
+3. Postorder Traversal 
+Question Link : https://leetcode.com/problems/binary-tree-postorder-traversal/
+
+Solution reference :
+class Solution {
+    List<Integer> result = new ArrayList<>();
+    public List<Integer> postorderTraversal(TreeNode root) {
+        if(root==null)
+            return result;
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
+        result.add(root.val);
+        return result;
+    }
+}
